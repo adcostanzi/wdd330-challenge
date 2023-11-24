@@ -64,6 +64,12 @@ button {
     color: black;
  }
 
+ button:disabled{
+   background-color: lightgrey;
+   color: grey;
+   border: none;
+ }
+
  input {
     height: 44px;
     font-size: 1.2rem;
@@ -74,37 +80,28 @@ button {
     border: 1px black solid;
     border-radius: 10px;
  }
-/*
- .search-bar {
-    display: flex;
-    flex-direction: flex;
-    margin: 0 auto;
-    min-width: 500px;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1024px;
- }*/
+
+
+
 
 /*         CSS FOR HOME PAGE ONLY            */
 
- div.home-container {
-    text-align: center;
-    position: absolute;
-    left: 50%;
+
+#home > header div.header-section{
+   position: absolute;
+   left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
- }
-
- div.home-container div.logo-container img {
-    display: block;
-    margin: 0 auto;
- }
-
-/*  div.search-section{
    display: flex;
    flex-direction: column;
-   text-align: center;
- } */
+}
+
+#home > header div.header-section > div.favs-container {
+   position: absolute;
+   top: 0px;
+   right: 0px;
+
+}
 
 
 
@@ -131,17 +128,79 @@ header > div.header-section > div.search-section {
    align-items: center;
 }
 
+@media screen and (min-width: 1320px){
+   #home > header div.header-section > div.search-section{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+}
+
 @media screen and (max-width: 1320px)  {
  div.header-section > div.search-section{
    display: flex;
    flex-direction: column;
    text-align: center;
  }
+
+
 }
+
+ /*         FILTER OPTIONS          */
+
+div.filter-options {
+   display: flex;
+   flex: 1 1;
+
+}
+
+button.filter-btn {
+   width: 20%;
+   padding: 0.2rem 0rem;
+}
+
+ /*         SEARCH RESULTS           */
+
+.search-list-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+   gap: 1rem;
+   margin: 2rem auto;
+}
+
+.search-result {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   margin: 10px;
+   border: solid 0.2px black;
+}
+
+.search-result img{
+   display: block;
+   max-width: 80%;
+   margin: 0px auto;
+}
+
+#favs, #remove-recipe {
+   padding: 0px;
+   border: none;
+   background: none;
+   margin: 0px;
+}
+
+#favs img, #remove-recipe img {
+   width: 30px;
+   height: 30px;
+}
+
+
 
  /*         FOOTER          */
 
- footer  {
+
+
+#foot > footer {
    width: 100%;
    position: absolute;
    bottom: 0px;
@@ -150,4 +209,11 @@ header > div.header-section > div.search-section {
    text-align: center;
    left: 50%;
    transform: translateX(-50%);
+ }
+
+ footer {
+   width: 100%;
+   padding: 0.5rem 0px;
+   background-color: var(--primary);
+   text-align: center;
  }

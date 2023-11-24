@@ -1,3 +1,11 @@
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, loadFilterOptions } from "./utils.mjs";
 
-loadHeaderFooter();
+async function main() {
+    await loadHeaderFooter();
+    
+    let filterBtn = document.querySelector("#filter-btn");
+  
+    filterBtn.addEventListener("click", loadFilterOptions);
+  }
+  
+  main();
