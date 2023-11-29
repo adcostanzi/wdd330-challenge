@@ -1,5 +1,5 @@
 import { searchQuery } from "./externalServicies.mjs";
-import { setLocalStorage } from "./utils.mjs";
+import { setLocalStorage, convertParameter} from "./utils.mjs";
 
 export function search(userInput) {
   // format user input for appropiate query search and redirect to recipeList page
@@ -19,24 +19,22 @@ export async function renderSearchList() {
   setLocalStorage("search-results", searchResults);
   const parentContainer = document.querySelector(".search-list-container");
   searchResults.results.forEach((result) => {
-    renderTemplate(result, parentContainer);
+    renderSearchResult(result, parentContainer);
   });
 }
 
-export function renderTemplate(element, parent, mode = "afterbegin") {
-  const elementHTML = `<section class="search-result">
-    <h3 class="recipe-name">${element.title}</h3>
-    <img src="${element.image}" alt="${element.title} image">
-    <button id="view-recipe" data-id="${element.id}">View Full Recipe</button>
-    <div class="favs-remove-container">
-        <button id="favs" data-id="${element.id}"><img src="/images/star.png" alt="add recipe to favorite list button"></button>
-        <button id="remove-recipe" data-id="${element.id}"><img src="/images/remove.png" alt="remove button"></button>
-    </div>
-</section>`;
+export function renderSearchResult(element, parent, mode = "afterbegin") {
+  const elementHTML = `
+  <a href=/recipe-pages/index.html?recipe=${element.id} class="recipe-search-result">
+    <section class="search-result">
+      <img src="${element.image}" alt="${element.title} image" loading="lazy">
+      <h3 class="recipe-title-sr">${element.title}</h3>
+    </section>
+    <div class="click-me">
+        <span class="highlight">Click n'Look!</span>
+      </div>
+  </a>
+  `;
   parent.insertAdjacentHTML(mode, elementHTML);
 }
 
-function convertParameter(searchParameter) {
-    // Converts user input " " into +
-  return searchParameter.replace(" ", "+");
-}

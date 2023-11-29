@@ -57,3 +57,8 @@ export function getParam(parameter) {
   const toSearch = urlParameters.get(parameter);
   return toSearch;
 }
+
+export function convertParameter(searchParameter) {
+  // Converts user input " " into +
+return searchParameter.replace(" ", "+");
+}

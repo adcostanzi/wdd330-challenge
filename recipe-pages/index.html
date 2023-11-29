@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LooknCook: Your Culinary Compass, Recipe Finder, Search by ingredients, easy and simple recipes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LooknCook: Your Culinary Compass, Recipe Finder, Search by ingredients, easy and simple recipes"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,14 +16,46 @@
     <link rel="stylesheet" href="/styles/base.css" />
     <script src="/js/recipe.js" type="module"></script>
     <title>LooknCook - Search</title>
-</head>
-<body>
-    <header id="main-header">
-
-    </header>
-   <main>
-        
-   </main>
-   <footer id="main-footer"></footer> 
-</body>
+  </head>
+  <body>
+    <header id="main-header"></header>
+    <main>
+      <section class="recipe">
+        <h2 class="recipe-title"></h2>
+        <div class="recipe-image-container">
+          <img class="recipe-image" src="" alt="" />
+        </div>
+        <div class="recipe-info">
+          <div class="recipe-servings">
+            <img src="/images/person.png" alt="person representing servings icon">
+            <span class="servings"></span>
+          </div>
+          <div class="recipe-prep-time">
+            <img src="/images/clock.png" alt="clock representing prep time icon">
+            <span class="prep-time"></span>
+          </div>
+        </div>
+        <h3>Dish Type:</h3>
+        <div class="dish-type"></div>
+        <div>
+          <h3>Ingredients Measures</h3>
+          <table class="ingredient-table">
+            <thead class="ingredients-table-heads">
+              <tr>
+                <th>Ingredient</th>
+                <th>Imperial</th>
+                <th>Metric</th>
+              </tr>
+            </thead>
+            <tbody class="recipe-ingredients">
+            </tbody>
+          </table>
+        </div>
+        <h3>Instructions</h3>
+        <ol class="recipe-instructions"></ol>
+      </section>
+      <button id="back-to-search-btn" type="button">Back to Search</button>
+    </main>
+    <footer id="main-footer"></footer>
+  </body>
 </html>

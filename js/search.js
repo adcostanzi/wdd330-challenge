@@ -10,6 +10,11 @@ async function main() {
     searchBar.value = getLocalStorage("last-search");
     searchBtn.addEventListener("click", searchFunction);
     
+    searchBar.addEventListener("keypress", function(e){
+      if (e.key === "Enter"){
+        searchBtn.click();    
+      }
+    });
 
     renderSearchList();
   }

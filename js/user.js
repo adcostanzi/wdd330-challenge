@@ -1,11 +1,17 @@
-import { loadHeaderFooter, loadFilterOptions } from "./utils.mjs";
+import { loadHeaderFooter, searchFunction } from "./utils.mjs";
 
 async function main() {
     await loadHeaderFooter();
     
-    let filterBtn = document.querySelector("#filter-btn");
-  
-    filterBtn.addEventListener("click", loadFilterOptions);
+    let searchBtn = document.querySelector("#search-btn");
+    let searchBar = document.querySelector("#search-bar");
+
+    searchBar.addEventListener("keypress", function(e){
+      if (e.key === "Enter"){
+        searchBtn.click();    
+      }
+    });
+    searchBtn.addEventListener("click", searchFunction);
   }
   
   main();
