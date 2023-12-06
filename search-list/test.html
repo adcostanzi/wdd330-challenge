@@ -1,7 +1,40 @@
-<section class="search-result">
-    <h3 class="recipe-name"></h3>
-    <img src="" alt="">
-    <button id="view-recipe" data-id="">View Full Recipe</button>
-    <button id="favs" data-id=""><img src="/images/star.png" alt="add recipe to favorite list button"></button>
-    <button id="remove-recipe" data-id=""><img src="/images/remove.png" alt="remove button"></button>
-</section>
+<form>
+    <fieldset>
+        <legend>Search by</legend>
+        <label class="filter-option"> Recipe Filters
+            <input type="radio" value="1" name="filter-type" checked>
+         </label>
+        <label class="filter-option">
+            <input type="radio" value="2" name="filter-type">
+            Ingredients
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Filters</legend>
+    </fieldset>
+</form>
+
+
+<label class="select-filter">
+    Cuisine: 
+    <select name="cuisine" id="cuisine">
+    </select>
+  </label>
+  <label class="select-filter">
+    Diet: 
+    <select name="diet" id="diet">
+    </select>
+  </label>
+  <label class="select-filter">
+    Intolerances: 
+    <select name="intolerances" id="intolerances">
+    </select>
+  </label>
+  <label>
+    Calories: 
+    <input name="calories" id="calories" type="range" min="0" max="1000" step="1">
+  </label>
+  <label>
+    Proteins: 
+    <input name="protein" id="protein" type="range" min="0" max="1000" step="1">
+  </label>

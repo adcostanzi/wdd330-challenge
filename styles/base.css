@@ -69,7 +69,7 @@ button:disabled {
   border: none;
 }
 
-input {
+input[type="text"] {
   height: 44px;
   font-size: 1.2rem;
   min-width: 500px;
@@ -135,16 +135,112 @@ header > div.header-section > div.search-section {
   }
 }
 
-/*         FILTER OPTIONS          */
-
-div.filter-options {
+.search-btns {
   display: flex;
-  flex: 1 1;
+  gap: 1rem;
 }
 
-button.filter-btn {
-  width: 20%;
-  padding: 0.2rem 0rem;
+.hide {
+  display: none;
+}
+
+
+/*           FILTER OPTIONS             */
+
+
+form input[type="radio"]{
+margin-bottom: 0.5rem;
+  }
+
+form label.filter-radio-option {
+  display: block;
+  margin: 0.75rem 0 0 0;
+}
+
+fieldset.search-by {
+  min-width: 500px;
+  width: 80%;
+  text-align: left;
+  align-items: center;
+  padding-top: 0;
+}
+
+
+.select-filter{
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.select-filter select{
+  display: block;
+  margin-top: 0.2rem;
+  width: 10rem;
+  height: 44px;
+  padding-left: 0.5rem;
+}
+.range-filter{
+  display: block;
+  margin-top: 0.5rem;
+}
+.range-filter input {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+
+#ingredient {
+  min-width: 100px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-ingredient-container {
+  display: block;
+  margin-top: 1rem;
+}
+
+#add-ingredient {
+  background-color: var(--accent-1);
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  border: 0.5px solid black;
+  border-radius: 10px;
+}
+
+#add-ingredient:hover {
+  background-color: var(--accent-2);
+}
+
+#add-ingredient:active {
+  background-color: var(--auxiliary);
+  color: black;
+}
+
+div.ingredient-list-search{
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+div.tag-search-ingredient {
+  border: var(--accent-1) solid 3px;
+   color: var(--accent-1);
+   font-weight: bold;
+   padding: 0.2rem 0.7rem;
+   margin: 0.4rem 0.2rem;
+   display: inline;
+}
+
+span.close-tag {
+  padding: 3px;
+  margin-left: 5px;
+}
+
+span.close-tag:hover {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 /*         SEARCH RESULTS           */

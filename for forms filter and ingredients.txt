@@ -6,7 +6,9 @@ intolerances - dropdown
 min-max protein
 min-max calories
 max results
-add ingredients
+
 
 
 by ingredients
+
+
