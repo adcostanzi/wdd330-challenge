@@ -1,11 +1,22 @@
 import { searchQuery } from "./externalServicies.mjs";
-import { setLocalStorage, convertParameter} from "./utils.mjs";
+import { setLocalStorage, convertParameter, getParam} from "./utils.mjs";
 
 export function search(userInput) {
   // format user input for appropiate query search and redirect to recipeList page
   let formattedInput = convertParameter(userInput);
   setLocalStorage("last-search", userInput);
   window.location = `/search-list/index.html?search=${formattedInput}`;
+}
+
+export function searchWithRecipeFilters(userInput, userFilters) {
+  let formattedInput = convertParameter(userInput);
+  setLocalStorage("filters", userFilters);
+  window.location = `/search-list/index.html?search=${formattedInput}&filter=recipe`;
+}
+
+export function searchWithIngredients(ingredients){
+  setLocalStorage("ingredients", ingredients);
+  window.location = `/search-list/index.html?search=&filter=ingredients`;
 }
 
 export async function renderSearchList() {
@@ -18,9 +29,16 @@ export async function renderSearchList() {
   let searchResults = await searchQuery("search");
   setLocalStorage("search-results", searchResults);
   const parentContainer = document.querySelector(".search-list-container");
-  searchResults.results.forEach((result) => {
-    renderSearchResult(result, parentContainer);
-  });
+  if (getParam("filter") !== "ingredients"){
+    searchResults.results.forEach((result) => {
+      renderSearchResult(result, parentContainer);
+    });
+  } else {
+    searchResults.forEach((result) => {
+      renderSearchResult(result, parentContainer);
+    });
+  }
+  
 }
 
 export function renderSearchResult(element, parent, mode = "afterbegin") {

@@ -1,4 +1,5 @@
-import { loadHeaderFooter, searchFunction } from "./utils.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
+import { searchFunction } from "./searchEngine.mjs";
 
 async function main() {
     await loadHeaderFooter();

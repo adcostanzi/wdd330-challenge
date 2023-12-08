@@ -1,6 +1,6 @@
-
+import { searchFunction } from "./searchEngine.mjs";
 import renderRecipeDetails from "./recipeDetails.mjs";
-import { loadHeaderFooter, searchFunction } from "./utils.mjs";
+import { loadHeaderFooter} from "./utils.mjs";
 
 async function main() {
     await loadHeaderFooter();

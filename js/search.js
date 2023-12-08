@@ -1,5 +1,6 @@
 import { renderSearchList} from "./recipeList.mjs";
-import { getLocalStorage, loadHeaderFooter, searchFunction } from "./utils.mjs";
+import { searchFunction } from "./searchEngine.mjs";
+import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
 
 async function main() {
     await loadHeaderFooter();
