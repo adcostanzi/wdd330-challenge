@@ -1,5 +1,5 @@
 import { searchQuery } from "./externalServicies.mjs";
-import { setLocalStorage, convertParameter, getParam} from "./utils.mjs";
+import { setLocalStorage, convertParameter, getParam, getLocalStorage} from "./utils.mjs";
 
 export function search(userInput) {
   // format user input for appropiate query search and redirect to recipeList page
@@ -30,15 +30,43 @@ export async function renderSearchList() {
   setLocalStorage("search-results", searchResults);
   const parentContainer = document.querySelector(".search-list-container");
   if (getParam("filter") !== "ingredients"){
-    searchResults.results.forEach((result) => {
-      renderSearchResult(result, parentContainer);
-    });
+    if (searchResults.results.length !== 0){
+      searchResults.results.forEach((result) => {
+        renderSearchResult(result, parentContainer);
+      });
+    } else {
+      renderNoResultsFound();
+    }
+    
   } else {
-    searchResults.forEach((result) => {
-      renderSearchResult(result, parentContainer);
-    });
-  }
-  
+    if (searchResults.length !== 0){
+      searchResults.forEach((result) => {
+        renderSearchResult(result, parentContainer);
+      });
+    } else {
+      renderNoResultsFound();
+    }
+    
+  } 
+}
+
+
+
+export function renderNoResultsFound(){
+  const noResultsHTML = `
+  <section class="not-found-message">
+    <h3>Oops... No results were found</h3>
+    <div class="not-found-body">
+      <p>Unfortunately our search engine was not able to find any results for your search. Please try again with another keyword(s).</p>
+      <div class="not-found-image-container">
+        <img src="/images/recipe-not-found-280.jpg" alt="recipe not found image of book with prohibitted sign">
+      </div>
+    </div>
+  </section>
+  `;
+
+  let parent = document.querySelector(".search-list-container");
+  parent.insertAdjacentHTML("afterbegin", noResultsHTML);
 }
 
 export function renderSearchResult(element, parent, mode = "afterbegin") {

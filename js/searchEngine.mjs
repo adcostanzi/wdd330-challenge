@@ -123,9 +123,9 @@ export function showFilterModal() {
     btnsContainer.appendChild(document.querySelector("#search-bar"));
     btnsContainer.insertAdjacentHTML("beforeend", searchButton);
 
-    let oldSearchBtn = document.querySelector("#search-btn");
+    //let oldSearchBtn = document.querySelector("#search-btn");
 
-    removeEventListener("click", oldSearchBtn);
+    //oldSearchBtn.removeEventListener("keypress", assignKey);
     //removeEventListener("keypress", searchBar);
     
     let newSearchBtn = document.querySelector("#search-with-filters");
@@ -138,6 +138,7 @@ export function showFilterModal() {
             newSearchBtn.click();
         }
     });
+    searchBar.focus();
   }
 
   function searchUsingFilters(){

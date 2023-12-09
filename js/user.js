@@ -1,18 +1,26 @@
+import { searchFunction, showFilterModal } from "./searchEngine.mjs";
+import { renderFavList } from "./userDetails.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
-import { searchFunction } from "./searchEngine.mjs";
 
 async function main() {
     await loadHeaderFooter();
     
     let searchBtn = document.querySelector("#search-btn");
-    let searchBar = document.querySelector("#search-bar");
+    let filters = document.querySelector("#filters-btn");
 
-    searchBar.addEventListener("keypress", function(e){
+    searchBtn.addEventListener("click", searchFunction);
+    filters.addEventListener("click", showFilterModal);
+
+    let searchBar = document.querySelector("#search-bar");
+    searchBar.addEventListener("keypress", (e) => {
       if (e.key === "Enter"){
-        searchBtn.click();    
+        e.preventDefault();
+        searchBtn.click();
       }
     });
-    searchBtn.addEventListener("click", searchFunction);
+    renderFavList();
   }
   
   main();
+
+ 

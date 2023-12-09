@@ -382,7 +382,25 @@ a.recipe-search-result:hover .click-me {
   opacity: 1;
 }
 
+.not-found-message {
+  margin: 2rem auto 10rem;
+  text-align: center;
+}
 
+.not-found-message > h3 {
+  font-size: 1.5rem;
+}
+
+.not-found-body {
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  align-items: center;
+}
+
+.not-found-image-container img {
+  width: 200px;
+}
 
 /*         RECIPE PAGE          */
 
@@ -401,6 +419,21 @@ h2.recipe-title {
    font-size: 3.5rem;
    text-decoration: underline;
 }
+
+.favs-btn-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1rem auto;
+  gap: 0.5rem;
+}
+
+#fav-star:hover{
+  scale: 1.2;
+}
+
+
+
 
 div.recipe-image-container {
    margin: 0 auto;
@@ -504,6 +537,18 @@ ol.recipe-instructions {
   margin: 3rem auto;
   padding: 1.3rem 1rem;
 }
+/*         USER PAGE          */
+
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin: 2rem auto;
+  width: 500px;
+}
+
+
+
 
 
 /*         FOOTER          */

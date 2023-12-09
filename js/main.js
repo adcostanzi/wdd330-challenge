@@ -9,6 +9,16 @@ async function main() {
 
     searchBtn.addEventListener("click", searchFunction);
     filters.addEventListener("click", showFilterModal);
+
+    let searchBar = document.querySelector("#search-bar");
+    searchBar.addEventListener("keypress", (e) => {
+      if (e.key === "Enter"){
+        e.preventDefault();
+        searchBtn.click();
+      }
+    });
   }
   
   main();
+
+ 
