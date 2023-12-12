@@ -277,8 +277,7 @@ export function showFilterModal() {
       newIngredient.classList.add("tag-search-ingredient");
       newIngredient.setAttribute("data-name", `${userIngredient.value}`);
   
-      //let ingredientName = document.createElement("span");
-      //ingredientName.textContent = userIngredient.value;
+      
       newIngredient.textContent = userIngredient.value;
   
       let closeBtn = document.createElement("span");
@@ -289,7 +288,6 @@ export function showFilterModal() {
   
       newIngredient.appendChild(closeBtn);
   
-      
       divContainer.appendChild(newIngredient);
   
       userIngredient.value = "";
