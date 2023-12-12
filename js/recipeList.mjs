@@ -1,5 +1,5 @@
 import { searchQuery } from "./externalServicies.mjs";
-import { setLocalStorage, convertParameter, getParam, getLocalStorage} from "./utils.mjs";
+import { setLocalStorage, convertParameter, getParam} from "./utils.mjs";
 
 export function search(userInput) {
   // format user input for appropiate query search and redirect to recipeList page
@@ -21,11 +21,6 @@ export function searchWithIngredients(ingredients){
 
 export async function renderSearchList() {
     // Perform searchQuery, store results in localStorage and render each result
-  /* try {
-        const searchResults = getLocalStorage("search-results");    
-    } catch (error) {
-        alert("Oops, unfortunately there are no results to display")
-    } */
   let searchResults = await searchQuery("search");
   setLocalStorage("search-results", searchResults);
   const parentContainer = document.querySelector(".search-list-container");
@@ -73,7 +68,7 @@ export function renderSearchResult(element, parent, mode = "afterbegin") {
   const elementHTML = `
   <a href=/recipe-pages/index.html?recipe=${element.id} class="recipe-search-result">
     <section class="search-result">
-      <img src="${element.image}" alt="${element.title} image" loading="lazy">
+      <img src="${element.image}" alt="${element.title} image" loading="lazy" width="250">
       <h3 class="recipe-title-sr">${element.title}</h3>
     </section>
     <div class="click-me">

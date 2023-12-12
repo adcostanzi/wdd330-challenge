@@ -307,7 +307,7 @@ div.search-btns-container > #search-bar {
 
 .search-result img {
   display: block;
-  max-width: 80%;
+ /*  max-width: 80%; */
   margin: 0px auto;
   margin-top: 1rem;
   /* border: solid black 0.1px; */

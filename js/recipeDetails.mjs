@@ -160,7 +160,5 @@ async function renderInstructions(steps, ol) {
 }
 
 function goBack() {
-  let lastSearch = convertParameter(getLocalStorage("last-search"));
-
-  window.location.replace(`/search-list/index.html?search=${lastSearch}`);
+  window.history.go(-1);
 }
