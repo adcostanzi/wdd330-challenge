@@ -237,6 +237,7 @@ export function showFilterModal() {
     });
        
     const searchButton = `
+    <div class="alert-container"></div>
     <button type="button" id="search-by-ingredients">Search</button>
     `;
   
@@ -257,8 +258,13 @@ export function showFilterModal() {
     ingredientsElements.forEach(element => {
         ingredients.push(element.dataset.name);
     });
-    setLocalStorage("last-search", "");
-    searchWithIngredients(ingredients);
+    let div = document.querySelector(".alert-container");
+    if (ingredients.length === 0){
+      formAlert("Please add ingredient first", div);
+    } else {
+      setLocalStorage("last-search", "");
+      searchWithIngredients(ingredients);
+    }
   }
   
   function addIngredientTag() {
