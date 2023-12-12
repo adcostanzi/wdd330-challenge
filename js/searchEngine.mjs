@@ -173,7 +173,7 @@ export function showFilterModal() {
   
   async function loadOptions() {
     // Load option for select inputs
-    let response = await fetch("/json/options.json");
+    let response = await fetch("../json/options.json");
     let options;
     if (response.ok) {
       options = await response.json();
