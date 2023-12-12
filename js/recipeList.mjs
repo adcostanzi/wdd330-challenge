@@ -5,7 +5,7 @@ export function search(userInput) {
   // format user input for appropiate query search and redirect to recipeList page
   let formattedInput = convertParameter(userInput);
   setLocalStorage("last-search", userInput);
-  window.location = `/search-list/index.html?search=${formattedInput}`;
+  window.location = `../search-list/index.html?search=${formattedInput}`;
 }
 
 export function searchWithRecipeFilters(userInput, userFilters) {
