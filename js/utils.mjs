@@ -37,8 +37,8 @@ export async function loadHeaderFooter() {
   let header = document.querySelector("#main-header");
   let footer = document.querySelector("#main-footer");
 
-  let headerTemplate = loadHTMLTemplate("../partials/header.html");
-  let footerTemplate = loadHTMLTemplate("../partials/footer.html");
+  let headerTemplate = loadHTMLTemplate("/partials/header.html");
+  let footerTemplate = loadHTMLTemplate("/partials/footer.html");
 
   await renderTemplate(headerTemplate, header);
   await renderTemplate(footerTemplate, footer);
